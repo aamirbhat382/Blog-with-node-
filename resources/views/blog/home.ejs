@@ -1,0 +1,31 @@
+<head>
+    <title>Code N Code</title>
+
+</head>
+
+<!-- New  -->
+<div class="bg-color ">
+    <div class="container bg-light p-3 border rounded ">
+        <!-- <div class="row row-cols-1 row-cols-md-3 mx-3"> -->
+        <!-- Card  -->
+        <h1 class="text-center daily-post"> Dai<span>ly</span> Po<span>st</span></h1>
+        <% articals.forEach(function(article,index) {%>
+            <div class=" card mt-4 ">
+                <div class="card-body  bg-back-color rounded-sm">
+                    <h4 class="card-title">
+                        <%= article.title %>
+                    </h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= article.createdAt.toLocaleDateString() %>
+                    </div>
+                    <div class="card-text mb-2">
+                        <%= article.description %>
+                    </div>
+                    <a href="article/<%= article.slug %>" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+            <!-- Next Card -->
+            <% })%>
+                <!-- </div> -->
+    </div>
+</div>

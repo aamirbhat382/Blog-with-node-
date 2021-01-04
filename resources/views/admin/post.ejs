@@ -1,0 +1,19 @@
+<div class="bg-color">
+    <div class="container bg-back-color rounded border py-3">
+        <form action="/admin/post" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input required value="" type="text" name="title" id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control" aria-valuemax="10"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="markdown">Markdown</label>
+                <textarea required name="markdown" id="markdown" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-danger mx-1">submit</button>
+        </form>
+    </div>
+</div>

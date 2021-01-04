@@ -1,0 +1,20 @@
+<div class="bg-color">
+    <div class="container bg-back-color p-3 border border-dark rounded my-3">
+        <form action="/admin/update/<%=article.id%>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input required value="<%=article.title%>" type="text" name="title" id="title" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" id="description" class="form-control"><%=article.description%></textarea>
+            </div>
+            <div class="form-group">
+                <label for="markdown">Markdown</label>
+                <textarea required name="markdown" id="markdown" class="form-control"><%=article.markdown%></textarea>
+            </div>
+            <button class="btn btn-danger mx-1">Save</button>
+            <a href="/" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,109 @@
+.home-first-dev {
+    background-image: url('/images/6c9239cd7bc0aa94decd1b5fa2a38f81_3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.home-first-dev::before {
+    filter: opacity(0.5);
+}
+
+.daily-post {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.daily-post span {
+    color: blue;
+}
+
+.bg-color {
+    background-color: #343a40;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    /* */
+}
+
+@media (max-width: 570px) {
+    .bg-color {
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+}
+
+.bg-back-color {
+    background-color: #cddbe2;
+    /* border-radius: ; */
+}
+
+#Comments {
+    height: 70vh;
+    overflow: auto;
+}
+
+.footer-link {
+    color: black;
+    text-transform: none;
+}
+
+.footer-link:hover,
+.footer-link:focus {
+    text-decoration: none;
+}
+
+#sanitizedHtml {
+    font-family: noto sans, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.9;
+    color: #404040;
+}
+
+#sanitizedHtml p {
+    margin: 10px;
+}
+
+#sanitizedHtml img {
+    width: 100%;
+    border-radius: 1rem;
+    background-attachment: scroll;
+}
+
+#sanitizedHtml pre {
+    padding: 3px 27px;
+    margin: auto;
+    overflow-y: hidden;
+    white-space: pre;
+    width: 65vw;
+    overflow-x: auto;
+    background-color: #2b2b2b;
+    color: rgb(255, 235, 235);
+    border-radius: 20px;
+}
+
+#sanitizedHtml pre code {
+    font-family: Consolas, 'Courier New', monospace;
+    padding: 10px;
+    color: wheat;
+}
+
+#sanitizedHtml pre code textarea {
+    overflow: auto;
+    overflow-anchor: auto;
+    width: 50vw;
+    height: 50vh;
+    font-family: Consolas, 'Courier New', monospace;
+    padding: 10px;
+    color: wheat;
+    background-color: #2b2b2b;
+}
+
+.social-svg-about {
+    display: flex;
+    justify-content: center;
+}
+
+.social-svg-about li {
+    list-style: none;
+    padding: 3px;
+}

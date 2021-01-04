@@ -1,0 +1,13 @@
+<div class="bg-color ">
+    <div class="container bg-back-color  border rounded  py-3">
+        <form action="/login" method="post">
+            <% if(messages.error) { %>
+                <div class="text-center my-3"> <span class="font-weight-bold text-danger"><%= messages.error %></span></div>
+                <% } %>
+                    <input class="form-control my-2" autocomplete="email" type="email" name="email" value="" placeholder="Email">
+                    <input class="form-control my-2" autocomplete="current-password" type="password" name="password" placeholder="Password">
+                    <button class="btn btn-danger mx-1 ">Login</button>
+                    <a href="/register " class="btn btn-danger ">Create An Account </a>
+        </form>
+    </div>
+</div>
