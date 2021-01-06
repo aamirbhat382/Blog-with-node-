@@ -2,7 +2,12 @@
     <div class="container bg-back-color  border rounded  py-3">
         <form action="/login" method="post">
             <% if(messages.error) { %>
-                <div class="text-center my-3"> <span class="font-weight-bold text-danger"><%= messages.error %></span></div>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong><%=messages.error%></strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <% } %>
                     <input class="form-control my-2" autocomplete="email" type="email" name="email" value="" placeholder="Email">
                     <input class="form-control my-2" autocomplete="current-password" type="password" name="password" placeholder="Password">

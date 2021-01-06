@@ -7,14 +7,16 @@ fetch(URL, {
     }
 }).then((response) => {
     return response.json()
-}).then((result) => {
+}).then(async(result) => {
     // console.log(result)
     comments = result
-    markup = generateMarkup(comments)
+    markup = await generateMarkup(comments)
         // console.log(markup)
     let xomments = document.querySelector('#Comments');
     xomments.innerHTML = markup
 
+}).catch((err) => {
+    return console.log(err)
 })
 
 function offical(customerId) {

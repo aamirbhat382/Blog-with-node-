@@ -8,14 +8,6 @@
     filter: opacity(0.5);
 }
 
-.daily-post {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.daily-post span {
-    color: blue;
-}
-
 .bg-color {
     background-color: #343a40;
     padding-top: 1rem;
@@ -61,6 +53,7 @@
 
 #sanitizedHtml p {
     margin: 10px;
+    word-wrap: break-word;
 }
 
 #sanitizedHtml img {
@@ -106,4 +99,24 @@
 .social-svg-about li {
     list-style: none;
     padding: 3px;
+}
+
+.daily-post {
+    padding: 4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif cursive;
+    animation: dailypost 10s;
+    animation-fill-mode: both;
+    animation-iteration-count: 5;
+    animation-timing-function: ease;
+    /* animation-delay: 6s; */
+    /* border: 2px solid; */
+}
+
+@media (max-width: 559px) {
+    .about-main {
+        background-image: url(/images/6efe0c58157ff6924b3d276d4d8d4804_11.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 }
