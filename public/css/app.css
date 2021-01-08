@@ -120,3 +120,8 @@
         background-size: cover;
     }
 }
+
+.li-link-article {
+    text-decoration: none;
+    color: rgb(231, 219, 219);
+}
