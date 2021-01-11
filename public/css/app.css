@@ -1,127 +1,62 @@
-.home-first-dev {
-    background-image: url('/images/6c9239cd7bc0aa94decd1b5fa2a38f81_3.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
+.sanitizedHtml {
+    font-family: sans-serif;
 }
 
-.home-first-dev::before {
-    filter: opacity(0.5);
-}
-
-.bg-color {
-    background-color: #343a40;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    /* */
-}
-
-@media (max-width: 570px) {
-    .bg-color {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
-    }
-}
-
-.bg-back-color {
-    background-color: #cddbe2;
-    /* border-radius: ; */
-}
-
-#Comments {
-    height: 70vh;
-    overflow: auto;
-}
-
-.footer-link {
-    color: black;
-    text-transform: none;
-}
-
-.footer-link:hover,
-.footer-link:focus {
-    text-decoration: none;
-}
-
-#sanitizedHtml {
-    font-family: noto sans, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.9;
-    color: #404040;
-}
-
-#sanitizedHtml p {
-    margin: 10px;
-    word-wrap: break-word;
-}
-
-#sanitizedHtml img {
-    width: 100%;
-    border-radius: 1rem;
-    background-attachment: scroll;
-}
-
-#sanitizedHtml pre {
-    padding: 3px 27px;
-    margin: auto;
-    overflow-y: hidden;
-    white-space: pre;
-    width: 65vw;
-    overflow-x: auto;
-    background-color: #2b2b2b;
-    color: rgb(255, 235, 235);
-    border-radius: 20px;
-}
-
-#sanitizedHtml pre code {
-    font-family: Consolas, 'Courier New', monospace;
-    padding: 10px;
+.sanitizedHtml pre {
+    background-color: black;
+    padding: 1rem;
     color: wheat;
-}
-
-#sanitizedHtml pre code textarea {
-    overflow: auto;
-    overflow-anchor: auto;
-    width: 50vw;
-    height: 50vh;
+    border-radius: 7px;
+    font-size: 14px;
     font-family: Consolas, 'Courier New', monospace;
-    padding: 10px;
-    color: wheat;
-    background-color: #2b2b2b;
-}
-
-.social-svg-about {
-    display: flex;
-    justify-content: center;
-}
-
-.social-svg-about li {
-    list-style: none;
-    padding: 3px;
-}
-
-.daily-post {
-    padding: 4px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif cursive;
-    animation: dailypost 10s;
-    animation-fill-mode: both;
-    animation-iteration-count: 5;
-    animation-timing-function: ease;
-    /* animation-delay: 6s; */
-    /* border: 2px solid; */
-}
-
-@media (max-width: 559px) {
-    .about-main {
-        background-image: url(/images/6efe0c58157ff6924b3d276d4d8d4804_11.jpg);
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
 }
 
 .li-link-article {
     text-decoration: none;
     color: rgb(231, 219, 219);
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .checkbox {
+    font-weight: 400;
+}
+
+.form-signin .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.comment-box {
+    height: 80vh;
+    overflow-y: auto;
+}
+
+.main-father {
+    padding: 1rem;
+    background-color: #e9ecef;
 }

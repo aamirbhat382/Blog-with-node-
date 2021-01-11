@@ -4,17 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="black">
+    <!-- <meta http-equiv="refresh" content="0; url=http://127.0.0.2"> -->
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#fff">
     <meta name="description" content="Code N Code Make's It is to find Solution's also help's Begineres and make's awsom projects and supports Javascript , Python , Html , Css , Node Js , MongoDb, Express Js , PassportJs, Git, GitHub,">
+    <link rel="manifest" href="/manifest.webmanifest">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/blog.css">
     <link rel=" icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/aamirbhat32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/aamirbhat16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/aamirbhat180.png">
+    <link rel="mask-icon" color="#0054ff" href="/images/aamirbhat.png">
 </head>
 
 <body>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light light">
+        <nav class="navbar navbar-expand-lg  navbar-light ">
             <a href="/" class="navbar-brand">Daily Post</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -69,8 +76,8 @@
                             <a class="btn btn-outline-dark" href="/profile">My Profile</a>
                             <% } else { %>
                                 <div>
-                                    <button type="button" class=" btn btn-outline-dark" data-toggle="modal" data-target="#loginModal">Login</button>
-                                    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#signupModal">SignUp</button>
+                                    <a href="/login" type="button" class=" btn btn-outline-dark">Login</a>
+                                    <a href="/register" class="btn btn-outline-dark">Register</a>
                                 </div>
                                 <% } %>
                 </ul>
@@ -78,74 +85,11 @@
             </div>
         </nav>
     </div>
+
     <!-- Templet Pages -->
     <%- body%>
-        <!-- Login Modal -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
 
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="loginModal">Login using your credentials</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                    </div>
 
-                    <div class="modal-body bg-dark">
-                        <div class="bg-color ">
-                            <div class="container bg-back-color  border rounded  py-3">
-                                <form action="/login" method="post">
-
-                                    <input class="form-control my-2" autocomplete="email" type="email" name="email" value="" placeholder="Email">
-                                    <input class="form-control my-2" autocomplete="current-password" type="password" name="password" placeholder="Password">
-                                    <button class="btn btn-danger mx-1 ">Login</button>
-                                    <a href="/register " class="btn btn-danger ">Create An Account </a>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!-- Register Modal -->
-        <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="signupModal">SignUp for an account</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">×</span>
-        </button>
-                    </div>
-
-                    <div class="modal-body bg-dark">
-                        <div class="bg-color ">
-                            <div class="container bg-back-color p-3 border rounded  my-3">
-                                <form action="/register" method="post">
-                                    <% if(messages.error) { %>
-                                        <div class="text-center my-3"> <span class="font-weight-bold text-danger"><%= messages.error %></span></div>
-                                        <% } %>
-                                            <input class="form-control my-2" type="text" placeholder="Enter your Name" name="name" value="<%=messages.name%>">
-                                            <input class="form-control my-2" autocomplete="email" type="email" placeholder="Enter your Email" name="email" value="<%=messages.email%>">
-                                            <input class="form-control my-2" autocomplete="current-password" type="password" placeholder="Enter your password" name="password">
-                                            <button class="btn btn-danger mx-1 ">Register</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- <div class="bg-color">
             <div class="container bg-back-color py-1 border rounded-sm">
                 <p class="text-center">&COPY;2021-2022 <span class="font-weight-bold">| Aamir Bhat</span></p>
@@ -155,6 +99,7 @@
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js.map"></script>
         <script src="/js/app.js"></script>
+        <script src="/js/next.js"></script>
 </body>
 
 </html>

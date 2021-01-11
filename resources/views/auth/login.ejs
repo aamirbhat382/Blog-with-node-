@@ -1,18 +1,31 @@
-<div class="bg-color ">
-    <div class="container bg-back-color  border rounded  py-3">
-        <form action="/login" method="post">
-            <% if(messages.error) { %>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong><%=messages.error%></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <% } %>
-                    <input class="form-control my-2" autocomplete="email" type="email" name="email" value="" placeholder="Email">
-                    <input class="form-control my-2" autocomplete="current-password" type="password" name="password" placeholder="Password">
-                    <button class="btn btn-danger mx-1 ">Login</button>
-                    <a href="/register " class="btn btn-danger ">Create An Account </a>
-        </form>
+<main class="main-father ">
+    <div class="container bg-light text-center py-3">
+        <% if(messages.error) { %>
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong><%=messages.error%></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <% } %>
+                <span>  <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="rgb(75, 75, 202)" class="bi bi-person-circle" viewBox="0 0 16 16">
+        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+      </svg></span>
+                <form class="form-signin" method="POST" action="/login">
+                    <h1 class="h3 mb-3 font-weight-normal">Please Log In </h1>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="email" id="inputEmail" value="" name="email" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputPassword" class="sr-only">Password</label>
+                    <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                    <div class="checkbox mb-3">
+                        <label>
+        <input type="checkbox" value="remember-me"> Remember me
+      </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Log In</button>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2021-2022</p>
+                </form>
     </div>
-</div>
+</main>

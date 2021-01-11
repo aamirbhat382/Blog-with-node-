@@ -11,12 +11,7 @@ function articleController() {
                 if (article == null) res.redirect('/')
                 const Allarticle = await Article.find({}, null, { sort: { 'createdAt': 1 } })
                 const comment = await Comment.find({ articleSlug: req.params.slug }, null, { sort: { 'createdAt': -1 } }).populate('customerId', '-password').exec((err, comment) => {
-                    if (req.xhr) {
-                        return res.json(comment)
-                    } else {
-
-                        return res.render('articles/show', { article: article, Allarticle: Allarticle })
-                    }
+                    return res.render('articles/show', { article: article, Allarticle: Allarticle, comment })
                 })
             } catch (e) {
                 req.flesh('error', 'Something Want To Wrong')

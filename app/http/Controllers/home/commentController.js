@@ -1,5 +1,6 @@
 const Comment = require('../../../models/comment')
 
+
 function commentController() {
     return {
         comment: (req, res) => {

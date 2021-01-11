@@ -1,19 +1,83 @@
-<div class="bg-color ">
-    <div class="container bg-back-color p-3 border rounded  my-3">
-        <form action="/register" method="post">
-            <% if(messages.error) { %>
-                <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong><%=messages.error%></strong>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+<main class="main-father">
+    <div class="container bg-light py-2">
+        <% if(messages.error) { %>
+            <div class="alert alert-warning alert-dismissible fade show " role="alert">
+                <strong><%=messages.error%></strong>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <% } %>
+                <div class="py-5 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="rgb(75, 75, 202)" class="bi bi-person-circle" viewBox="0 0 16 16">
+    <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+    <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+  </svg>
+                    <h2 class="font-weight-bold">Register </h2>
+                    <p class="lead">Register or Log In.</p>
                 </div>
-                <% } %>
-                    <input class="form-control my-2" type="text" placeholder="Enter your Name" name="name" value="<%=messages.name%>">
-                    <input class="form-control my-2" type="email" autocomplete="email" placeholder="Enter your Email" name="email" value="<%=messages.email%>">
-                    <input class="form-control my-2" type="password" autocomplete="current-password" placeholder="Enter your password" name="password">
-                    <button class="btn btn-danger mx-1 ">Register</button>
-                    <a href="/login " class="btn btn-danger ">Already have account ?</a>
-        </form>
+                <div class="row">
+                    <div class="col-md-4 order-md-2 mb-4">
+                        <h4 class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-muted">Log In</span>
+
+                        </h4>
+                        <form class="card p-2" method="POST" action="/login">
+                            <div class="needs-validation">
+                                <input type="email" name="email" class="form-control my-2" placeholder="Email">
+                                <input type="password" class="form-control my-2" name="password" placeholder="Password">
+                                <!-- <div class="input-group-append"> -->
+                                <button type="submit" class="btn btn-secondary">Log In</button>
+                                <!-- </div> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-8 order-md-1">
+                        <h4 class="mb-3 text-muted text-secondary">Register</h4>
+                        <form class="needs-validation" novalidate method="POST" action="/register">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName">First name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value="" name="name" value="<%=messages.name%>" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName">Last name</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="username">Username</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">@</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                    <div class="invalid-feedback" style="width: 100%;">
+                                        Your username is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">Email </label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com" required value="<%=messages.email%>">
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">password </label>
+                                <input type="password" class="form-control" name="password" id="email" placeholder="********************">
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn btn-secondary btn-lg " type="submit">Register</button>
+                        </form>
+                    </div>
+                </div>
+                <footer class="my-5 pt-5 text-muted text-center text-small">
+                    <p class="mb-1">&copy; 2021-2022 Daily Post</p>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><a href="#">Privacy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms</a></li>
+                        <li class="list-inline-item"><a href="#">Support</a></li>
+                    </ul>
+                </footer>
     </div>
-</div>
+</main>

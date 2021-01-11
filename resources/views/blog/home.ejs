@@ -2,30 +2,42 @@
     <title>Code N Code</title>
 
 </head>
-
-<!-- New  -->
-
-<div class="container">
-    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 font-italic">The date the cookie will expire. If this is blank</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
-        </div>
-    </div>
-    <% articals.forEach(function(element) { %>
-
-        <div class="jumbotron p-3 p-md-5 text-white rounded bg-light text-dark">
-            <div class="col-md-6 px-0">
-                <h1 class="display-4 font-italic">
-                    <%=element.title%>
-                </h1>
-                <p class="lead my-3">
-                    <%=element.description%>
-                </p>
-                <p class="lead mb-0"><a href="/article/<%=element.slug%>" class="text-info font-weight-bold">Continue reading...</a></p>
+<main class="main-father">
+    <div class="container bg-light py-3">
+        <% singleArticle = articals[10]%>
+            <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+                <div class="col-md-6 px-0">
+                    <h1 class="display-4 font-italic">
+                        <%=singleArticle.title%>
+                    </h1>
+                    <p class="<%=singleArticle.description%></p>
+                    <p class=" lead mb-0 "><a href="/article/<%=singleArticle.slug%>" class="text-white font-weight-bold">Continue reading...</a>
+                    </p>
+                </div>
             </div>
-        </div>
+            <div class="" id="markup">
+                <% article = articals.slice(0,10)%>
+                    <% article.forEach(function(element) { %>
 
-        <% }) %>
-</div>
+                        <div class=" jumbotron p-3 p-md-5    rounded  text-dark border">
+                            <div class="col-md-6 px-0">
+                                <h1 class="display-4 font-italic">
+                                    <%=element.title%>
+                                </h1>
+                                <p class="lead my-3">
+                                    <%=element.description%>
+                                </p>
+                                <p class="lead mb-0"><a href="/article/<%=element.slug%>" class="text-info font-weight-bold">Continue reading...</a></p>
+                            </div>
+                        </div>
+                        <% }) %>
+
+            </div>
+            <nav class="blog-pagination" id="lastbtn">
+                <a class="btn btn-outline-primary " id="next" data-articles="<%=JSON.stringify(articals) %>" data-ist="0" data-second="10" href="#">Next</a>
+            </nav>
+    </div>
+
+</main>
+<!-- <button id="next" data-articles="<%=JSON.stringify(articals) %>" data-ist="0" data-second="10" class="btn btn-danger">Next</button> -->
+<!-- <div class="" id="markup"></div> -->

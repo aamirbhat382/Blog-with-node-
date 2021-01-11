@@ -1,71 +1,116 @@
-<main role="main" class="container">
-    <div class="row">
-        <div class="col-md-8 blog-main">
-            <div class="blog-post">
-                <h2 class="blog-post-title py-1">
-                    <%=article.title%>
-                </h2>
-                <p class="blog-post-meta">
-                    <%= article.createdAt.toLocaleDateString() %> by <a href="#">Aamir Bhat</a></p>
-                <q>
+<title>
+    <%=article.slug%>
+</title>
+<main role="main" class="main-father">
+    <div class="container bg-light py-3">
+        <%  if(user && user.role === 'admin' ) { %>
+            <a href="/admin/edit/<%=article._id%>" class="">
+                <span class="btn btn-dark my-3"><svg xmlns=" http://www.w3.org/2000/svg " width="20 " height="20 " fill="currentColor " class="bi bi-pencil " viewBox="0 0 16 16 ">
+            <path fill-rule="evenodd " d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207
+        4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z "/>
+          </svg> Edit </span>
+            </a>
+            <a href="/admin/delete/<%=article._id%>" class="btn btn-danger"> Delete</a>
+            <% }  %>
+                <div class="row">
+                    <div class="col-md-8 blog-main">
+                        <div class="blog-post">
+                            <h2 class="blog-post-title py-1">
+                                <%=article.title%>
+                            </h2>
+                            <p class="blog-post-meta">
+                                <%= article.createdAt.toLocaleDateString() %> by <a href="#">Aamir Bhat</a></p>
+                            <q>
                     <%=article.description%>
                 </q>
-                <hr>
-                <div id="sanitizedHtml" class="">
-                    <%-article.sanitizedHtml%>
+                            <hr>
+                            <div id="sanitizedHtml" class="sanitizedHtml">
+                                <%-article.sanitizedHtml%>
+                            </div>
+                        </div>
+                        <!-- /.blog-post -->
+                        <!-- /.blog-post -->
+
+                        <nav class="blog-pagination">
+                            <a class="btn btn-outline-primary" href="#">Older</a>
+                            <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
+                        </nav>
+
+                        <%if(user) { %>
+                            <form action="/article/comment/<%=article.slug%>" method="post" class="col-md-4  py-2">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Comment</label>
+                                    <textarea class="form-control" name="comment" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                                <input type="submit" value="Submit" class="btn btn-danger" placeholder="Submit">
+                            </form>
+                            <% } else { %>
+                                <a href="/login" class="btn btn-dark my-1">Login to Comment</a>
+                                <% } %>
+
+                    </div>
+                    <!-- /.blog-main -->
+                    <aside class="col-md-4 blog-sidebar">
+                        <div class="p-3 mb-3 jumbotron rounded">
+                            <h4 class="font-italic">About</h4>
+                            <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+                        </div>
+                        <div class="p-3">
+                            <h4 class="font-italic">Read more</h4>
+                            <ol class="list-unstyled mb-0">
+                                <%NewArray =  Allarticle.slice(0,12)%>
+                                    <% NewArray.forEach(function(element){%>
+                                        <li class="border p-1">
+                                            <a href="<%=element.slug%>">
+                                                <%=element.slug%>
+                                            </a>
+                                        </li>
+                                        <% })%>
+                            </ol>
+                        </div>
+
+                        <div class="p-3">
+                            <h4 class="font-italic">Elsewhere</h4>
+                            <ol class="list-unstyled">
+                                <li><a href="#">GitHub</a></li>
+                                <li><a href="#">Twitter</a></li>
+                                <li><a href="#">Facebook</a></li>
+                            </ol>
+                        </div>
+                        <div class="my-3  p-3 bg-white rounded box-shadow comment-box">
+                            <h6 class="border-bottom border-gray pb-2 mb-0">Comment's</h6>
+                            <%   if(comment.length == 0){%>
+                                <h1>No! Comment's</h1>
+                                <% } else{ %>
+                                    <%  comment.forEach(function(element) {%>
+                                        <div class="media text-muted pt-3">
+                                            <span class="mr-2 rounded">   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="rgb(75, 75, 202)" class="bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M13.468 12.37C12.758 11.226 11.195 10 8 10s-4.757 1.225-5.468 2.37A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
+                                        <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                        <path fill-rule="evenodd" d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zM0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8z"/>
+                                      </svg></span>
+                                            <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                                                <%if(element.customerId.role === 'admin'){ %>
+                                                    <strong class="d-block text-gray-dark"><%= element.customerId.name%> <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="blue" class="bi bi-patch-check-fll" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984a.5.5 0 0 0-.708-.708L7 8.793 5.854 7.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                                            </svg></span></strong>
+                                                    <% } else { %>
+                                                        <strong class="d-block text-gray-dark"><%= element.customerId.name%> </strong>
+                                                        <% } %>
+                                                            <b class="text-info "> <%=element.comment%> </b>
+                                                            <small class="ml-3 text-muted ">
+                                                <%=element.createdAt.toLocaleDateString()%>
+                                          </small>
+                                            </p>
+                                        </div>
+                                        <%    }) %>
+                                            <%    } %>
+
+                        </div>
+                    </aside>
+
                 </div>
-            </div>
-            <!-- /.blog-post -->
-            <!-- /.blog-post -->
 
-            <nav class="blog-pagination">
-                <a class="btn btn-outline-primary" href="#">Older</a>
-                <a class="btn btn-outline-secondary disabled" href="#">Newer</a>
-            </nav>
-        </div>
-        <!-- /.blog-main -->
-        <aside class="col-md-4 blog-sidebar">
-            <div class="p-3 mb-3 bg-light rounded">
-                <h4 class="font-italic">About</h4>
-                <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-            </div>
-            <div class="p-3">
-                <h4 class="font-italic">Archives</h4>
-                <ol class="list-unstyled mb-0">
-                    <li><a href="#">March 2014</a></li>
-                    <li><a href="#">February 2014</a></li>
-                    <li><a href="#">January 2014</a></li>
-                    <li><a href="#">December 2013</a></li>
-                    <li><a href="#">November 2013</a></li>
-                    <li><a href="#">October 2013</a></li>
-                    <li><a href="#">September 2013</a></li>
-                    <li><a href="#">August 2013</a></li>
-                    <li><a href="#">July 2013</a></li>
-                    <li><a href="#">June 2013</a></li>
-                    <li><a href="#">May 2013</a></li>
-                    <li><a href="#">April 2013</a></li>
-                </ol>
-            </div>
-
-            <div class="p-3">
-                <h4 class="font-italic">Elsewhere</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Facebook</a></li>
-                </ol>
-            </div>
-        </aside>
-        <div class="container">
-            <%if(user) { %>
-                <form action="/article/comment/<%=article.slug%>" method="post" class="col-md-4  py-2">
-                    <textarea name="comment" class="form-control m-2 "></textarea>
-                    <input type="submit" value="Submit" class="btn btn-danger" placeholder="Submit">
-                </form>
-                <% } else { %>
-                    <a href="/login" class="btn btn-dark my-1">Login to Comment</a>
-                    <% } %>
-        </div>
-        <div class="album py-5 bg-light" id="Comments"></div>
+    </div>
 
 </main>

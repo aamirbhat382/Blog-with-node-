@@ -1,0 +1,37 @@
+{
+    "short_name": "Daily Post",
+    "name": "Daily Post | Promming | Codeing |  ",
+    "description": "Read More and More Do less Join Commenty ",
+    "icons": [{
+            "src": "/images/aamirbhat 192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/aamirbhat 512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+
+        }
+    ],
+    "start_url": "/",
+    "background_color": "black",
+    "display": "standalone",
+    "scope": "/",
+    "theme_color": "black",
+    "shortcuts": [{
+            "name": "About ",
+            "short_name": "About",
+            "description": "About |",
+            "url": "/about",
+            "icons": [{ "src": "/images/aamirbhat 192.png", "sizes": "192x192" }]
+        },
+        {
+            "name": "Contact",
+            "short_name": "Contact",
+            "description": "Contact | ",
+            "url": "/contact",
+            "icons": [{ "src": "/images/aamirbhat 192.png", "sizes": "192x192" }]
+        }
+    ]
+}

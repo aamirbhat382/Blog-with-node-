@@ -12,6 +12,7 @@ const admin = require('../app/http/middlawers/admin')
 function init(app) {
     //Home Routs
     app.get('/', homeController().index)
+    app.get('/next', homeController().next)
         // Contact and About
     app.get('/contact', homeController().contact)
     app.get('/about', homeController().about)
